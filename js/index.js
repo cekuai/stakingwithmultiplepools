@@ -561,9 +561,9 @@ async function refreshBal(sClass) {
 
     let nBalStack = await oContractStacking.methods.getUser(selectedAccount).call();
 
-    console.log('nBalStack', nBalStack.stakeAmount);
+    console.log('nBalStack', Number(nBalStack.stakeAmount));
 
-    let nBalStackW = nBalStack.stakeAmount / 10**18;
+    let nBalStackW = Number(nBalStack.stakeAmount) / 10**18;
 
     $('#user-staked-balance').attr('bal', nBalStackW).html(`${nBalStackW} ${_CONTRACT_DATA[_NETWORK_ID].TOKEN.symbol}`);
 
